@@ -9,22 +9,24 @@
 /* Begin PBXBuildFile section */
 		2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70029E8CD7F006320BA /* AppDelegate.swift */; };
 		2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70229E8CD7F006320BA /* SceneDelegate.swift */; };
-		2713F70529E8CD7F006320BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70429E8CD7F006320BA /* ViewController.swift */; };
+		2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70429E8CD7F006320BA /* ChatViewController.swift */; };
 		2713F70A29E8CD81006320BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2713F70929E8CD81006320BA /* Assets.xcassets */; };
 		2713F70D29E8CD81006320BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */; };
 		2713F71829E8D0AD006320BA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F71729E8D0AD006320BA /* API.swift */; };
 		2713F71E29E8D5CA006320BA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2713F71D29E8D5CA006320BA /* OpenAISwift */; };
+		2713F72529E8D907006320BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F72429E8D907006320BA /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2713F6FD29E8CD7F006320BA /* ChatGPT-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatGPT-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713F70029E8CD7F006320BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2713F70229E8CD7F006320BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2713F70429E8CD7F006320BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2713F70429E8CD7F006320BA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2713F70929E8CD81006320BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2713F70C29E8CD81006320BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2713F70E29E8CD81006320BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2713F71729E8D0AD006320BA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2713F72429E8D907006320BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				2713F71729E8D0AD006320BA /* API.swift */,
+				2713F72429E8D907006320BA /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -112,7 +115,7 @@
 		2713F72329E8D899006320BA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2713F70429E8CD7F006320BA /* ViewController.swift */,
+				2713F70429E8CD7F006320BA /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,7 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2713F70529E8CD7F006320BA /* ViewController.swift in Sources */,
+				2713F72529E8D907006320BA /* Service.swift in Sources */,
+				2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */,
 				2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */,
 				2713F71829E8D0AD006320BA /* API.swift in Sources */,
 				2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */,
