@@ -9,21 +9,24 @@
 /* Begin PBXBuildFile section */
 		2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70029E8CD7F006320BA /* AppDelegate.swift */; };
 		2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70229E8CD7F006320BA /* SceneDelegate.swift */; };
-		2713F70529E8CD7F006320BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70429E8CD7F006320BA /* ViewController.swift */; };
-		2713F70829E8CD7F006320BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2713F70629E8CD7F006320BA /* Main.storyboard */; };
+		2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70429E8CD7F006320BA /* ChatViewController.swift */; };
 		2713F70A29E8CD81006320BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2713F70929E8CD81006320BA /* Assets.xcassets */; };
 		2713F70D29E8CD81006320BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */; };
+		2713F71829E8D0AD006320BA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F71729E8D0AD006320BA /* API.swift */; };
+		2713F71E29E8D5CA006320BA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2713F71D29E8D5CA006320BA /* OpenAISwift */; };
+		2713F72529E8D907006320BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F72429E8D907006320BA /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2713F6FD29E8CD7F006320BA /* ChatGPT-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatGPT-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713F70029E8CD7F006320BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2713F70229E8CD7F006320BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2713F70429E8CD7F006320BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2713F70729E8CD7F006320BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2713F70429E8CD7F006320BA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2713F70929E8CD81006320BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2713F70C29E8CD81006320BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2713F70E29E8CD81006320BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2713F71729E8D0AD006320BA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2713F72429E8D907006320BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2713F71E29E8D5CA006320BA /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +62,62 @@
 			children = (
 				2713F70029E8CD7F006320BA /* AppDelegate.swift */,
 				2713F70229E8CD7F006320BA /* SceneDelegate.swift */,
-				2713F70429E8CD7F006320BA /* ViewController.swift */,
-				2713F70629E8CD7F006320BA /* Main.storyboard */,
-				2713F70929E8CD81006320BA /* Assets.xcassets */,
-				2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */,
 				2713F70E29E8CD81006320BA /* Info.plist */,
+				2713F72229E8D881006320BA /* Utils */,
+				2713F71429E8CF5E006320BA /* Service */,
+				2713F72029E8D84D006320BA /* Model */,
+				2713F71F29E8D844006320BA /* View */,
+				2713F72129E8D858006320BA /* ViewModel */,
+				2713F72329E8D899006320BA /* Controller */,
 			);
 			path = "ChatGPT-App";
+			sourceTree = "<group>";
+		};
+		2713F71429E8CF5E006320BA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2713F71729E8D0AD006320BA /* API.swift */,
+				2713F72429E8D907006320BA /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2713F71F29E8D844006320BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2713F72029E8D84D006320BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2713F72129E8D858006320BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2713F72229E8D881006320BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2713F70929E8CD81006320BA /* Assets.xcassets */,
+				2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2713F72329E8D899006320BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2713F70429E8CD7F006320BA /* ChatViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +136,9 @@
 			dependencies = (
 			);
 			name = "ChatGPT-App";
+			packageProductDependencies = (
+				2713F71D29E8D5CA006320BA /* OpenAISwift */,
+			);
 			productName = "ChatGPT-App";
 			productReference = 2713F6FD29E8CD7F006320BA /* ChatGPT-App.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +167,9 @@
 				Base,
 			);
 			mainGroup = 2713F6F429E8CD7F006320BA;
+			packageReferences = (
+				2713F71C29E8D5CA006320BA /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 2713F6FE29E8CD7F006320BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +186,6 @@
 			files = (
 				2713F70D29E8CD81006320BA /* LaunchScreen.storyboard in Resources */,
 				2713F70A29E8CD81006320BA /* Assets.xcassets in Resources */,
-				2713F70829E8CD7F006320BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2713F70529E8CD7F006320BA /* ViewController.swift in Sources */,
+				2713F72529E8D907006320BA /* Service.swift in Sources */,
+				2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */,
 				2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */,
+				2713F71829E8D0AD006320BA /* API.swift in Sources */,
 				2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +207,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2713F70629E8CD7F006320BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2713F70729E8CD7F006320BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,9 +342,9 @@
 				DEVELOPMENT_TEAM = 3Z72SDHS75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ChatGPT-App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ChatGPT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,9 +370,9 @@
 				DEVELOPMENT_TEAM = 3Z72SDHS75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ChatGPT-App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ChatGPT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2713F71C29E8D5CA006320BA /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2713F71D29E8D5CA006320BA /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2713F71C29E8D5CA006320BA /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2713F6F529E8CD7F006320BA /* Project object */;
 }

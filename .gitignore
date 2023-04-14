@@ -2,6 +2,9 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## APIKey
+ChatGPT-App/ChatGPT-App/Service/API.swift
+
 ## User settings
 xcuserdata/
 
