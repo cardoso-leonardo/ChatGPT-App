@@ -19,19 +19,28 @@ final class ChatView: UIView {
     private let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = " Ask me something"
+        textField.placeholder = "Ask me something"
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
-        textField.returnKeyType = .send
         textField.layer.cornerRadius = 20
         textField.backgroundColor = .secondarySystemFill
         return textField
+    }()
+    
+    private let sendButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentMode = .center
+        button.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+        button.layer.cornerRadius = 20
+        return button
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(tableView, textField)
+        addSubviews(tableView, textField, sendButton)
         addConstraints()
     }
     
@@ -48,8 +57,13 @@ final class ChatView: UIView {
             
             textField.bottomAnchor.constraint(equalTo: bottomAnchor),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            textField.heightAnchor.constraint(equalToConstant: 40)
+            textField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -5),
+            textField.heightAnchor.constraint(equalToConstant: 40),
+            
+            sendButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            sendButton.widthAnchor.constraint(equalToConstant: 40),
+            sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            sendButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 

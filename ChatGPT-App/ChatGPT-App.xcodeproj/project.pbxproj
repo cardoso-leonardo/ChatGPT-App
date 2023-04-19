@@ -52,7 +52,6 @@
 		2706B2B329EE399D0034065D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2713F72029E8D84D006320BA /* Model */,
 				2713F70029E8CD7F006320BA /* AppDelegate.swift */,
 				2713F70229E8CD7F006320BA /* SceneDelegate.swift */,
 				2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */,
@@ -92,6 +91,7 @@
 				2706B2B429F04BC40034065D /* Extensions */,
 				2706B2B329EE399D0034065D /* Resources */,
 				2713F70E29E8CD81006320BA /* Info.plist */,
+				2713F72029E8D84D006320BA /* Model */,
 				2713F71429E8CF5E006320BA /* Service */,
 				2713F71F29E8D844006320BA /* View */,
 				2713F72129E8D858006320BA /* ViewModel */,
