@@ -16,11 +16,19 @@ final class ChatView: UIView {
         tableView.backgroundColor = UIColor.systemPink
         return tableView
     }()
+    
+    private let textField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Ask me something"
+        textField.returnKeyType = .send
+        return textField
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubview(tableView)
+        addSubviews(tableView, textField)
         addConstraints()
     }
     
@@ -31,9 +39,14 @@ final class ChatView: UIView {
     private func addConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: textField.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 
