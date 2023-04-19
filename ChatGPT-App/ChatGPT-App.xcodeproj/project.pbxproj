@@ -78,7 +78,6 @@
 			children = (
 				2706B2B329EE399D0034065D /* Resources */,
 				2713F70E29E8CD81006320BA /* Info.plist */,
-				2713F72229E8D881006320BA /* Utils */,
 				2713F71429E8CF5E006320BA /* Service */,
 				2713F71F29E8D844006320BA /* View */,
 				2713F72129E8D858006320BA /* ViewModel */,
@@ -117,13 +116,6 @@
 				279830BE29EE2D0200BA7CE7 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		2713F72229E8D881006320BA /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		2713F72329E8D899006320BA /* Controller */ = {
