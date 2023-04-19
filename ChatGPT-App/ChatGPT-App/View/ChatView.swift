@@ -20,8 +20,8 @@ final class ChatView: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Ask me something"
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
+        textField.setLeftPaddingPoints(15)
+        textField.setRightPaddingPoints(15)
         textField.layer.cornerRadius = 20
         textField.backgroundColor = .secondarySystemFill
         return textField
@@ -55,12 +55,12 @@ final class ChatView: UIView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             textField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -5),
             textField.heightAnchor.constraint(equalToConstant: 40),
             
-            sendButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            sendButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             sendButton.widthAnchor.constraint(equalToConstant: 40),
             sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             sendButton.heightAnchor.constraint(equalToConstant: 40)
