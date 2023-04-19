@@ -57,7 +57,7 @@ final class ChatView: UIView {
             
             textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            textField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -5),
+            textField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor),
             textField.heightAnchor.constraint(equalToConstant: 40),
             
             sendButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
