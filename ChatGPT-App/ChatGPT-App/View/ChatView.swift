@@ -13,15 +13,18 @@ final class ChatView: UIView {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = UIColor.systemPink
         return tableView
     }()
     
     private let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Ask me something"
+        textField.placeholder = " Ask me something"
+        textField.setLeftPaddingPoints(10)
+        textField.setRightPaddingPoints(10)
         textField.returnKeyType = .send
+        textField.layer.cornerRadius = 20
+        textField.backgroundColor = .secondarySystemFill
         return textField
     }()
 
@@ -44,9 +47,9 @@ final class ChatView: UIView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             textField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            textField.heightAnchor.constraint(equalToConstant: 50)
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            textField.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 

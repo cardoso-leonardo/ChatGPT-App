@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2706B2B629F04BD20034065D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706B2B529F04BD20034065D /* Extensions.swift */; };
+		2706B2B629F04BD20034065D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706B2B529F04BD20034065D /* UIView.swift */; };
+		2706B2B829F05C1B0034065D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706B2B729F05C1B0034065D /* UITextField.swift */; };
 		2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70029E8CD7F006320BA /* AppDelegate.swift */; };
 		2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70229E8CD7F006320BA /* SceneDelegate.swift */; };
 		2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70429E8CD7F006320BA /* ChatViewController.swift */; };
@@ -21,7 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2706B2B529F04BD20034065D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2706B2B529F04BD20034065D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2706B2B729F05C1B0034065D /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2713F6FD29E8CD7F006320BA /* ChatGPT-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatGPT-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713F70029E8CD7F006320BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2713F70229E8CD7F006320BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +64,8 @@
 		2706B2B429F04BC40034065D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2706B2B529F04BD20034065D /* Extensions.swift */,
+				2706B2B529F04BD20034065D /* UIView.swift */,
+				2706B2B729F05C1B0034065D /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,8 +218,9 @@
 			files = (
 				2713F72529E8D907006320BA /* Service.swift in Sources */,
 				279830BF29EE2D0200BA7CE7 /* ChatViewModel.swift in Sources */,
+				2706B2B829F05C1B0034065D /* UITextField.swift in Sources */,
 				2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */,
-				2706B2B629F04BD20034065D /* Extensions.swift in Sources */,
+				2706B2B629F04BD20034065D /* UIView.swift in Sources */,
 				2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */,
 				2713F71829E8D0AD006320BA /* API.swift in Sources */,
 				279830BD29EE27FB00BA7CE7 /* ChatView.swift in Sources */,
