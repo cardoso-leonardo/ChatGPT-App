@@ -18,7 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let sc = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: sc)
-        window?.rootViewController = ChatViewController()
+        
+        let vc = ChatViewController()
+        vc.title = "ChatGPT"
+        let nav = UINavigationController(rootViewController: vc)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 

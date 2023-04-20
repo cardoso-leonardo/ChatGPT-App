@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2706B2B629F04BD20034065D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706B2B529F04BD20034065D /* UIView.swift */; };
+		2706B2B829F05C1B0034065D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706B2B729F05C1B0034065D /* UITextField.swift */; };
+		2710CCA529F0AB4C002B9B1F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2710CCA429F0AB4C002B9B1F /* IQKeyboardManagerSwift */; };
 		2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70029E8CD7F006320BA /* AppDelegate.swift */; };
 		2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70229E8CD7F006320BA /* SceneDelegate.swift */; };
 		2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F70429E8CD7F006320BA /* ChatViewController.swift */; };
@@ -15,9 +18,13 @@
 		2713F71829E8D0AD006320BA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F71729E8D0AD006320BA /* API.swift */; };
 		2713F71E29E8D5CA006320BA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2713F71D29E8D5CA006320BA /* OpenAISwift */; };
 		2713F72529E8D907006320BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713F72429E8D907006320BA /* Service.swift */; };
+		279830BD29EE27FB00BA7CE7 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279830BC29EE27FB00BA7CE7 /* ChatView.swift */; };
+		279830BF29EE2D0200BA7CE7 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279830BE29EE2D0200BA7CE7 /* ChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2706B2B529F04BD20034065D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2706B2B729F05C1B0034065D /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2713F6FD29E8CD7F006320BA /* ChatGPT-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatGPT-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713F70029E8CD7F006320BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2713F70229E8CD7F006320BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +34,8 @@
 		2713F70E29E8CD81006320BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2713F71729E8D0AD006320BA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2713F72429E8D907006320BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		279830BC29EE27FB00BA7CE7 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		279830BE29EE2D0200BA7CE7 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +44,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				2713F71E29E8D5CA006320BA /* OpenAISwift in Frameworks */,
+				2710CCA529F0AB4C002B9B1F /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2706B2B329EE399D0034065D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2713F70029E8CD7F006320BA /* AppDelegate.swift */,
+				2713F70229E8CD7F006320BA /* SceneDelegate.swift */,
+				2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */,
+				2713F70929E8CD81006320BA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2706B2B429F04BC40034065D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2706B2B529F04BD20034065D /* UIView.swift */,
+				2706B2B729F05C1B0034065D /* UITextField.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2713F6F429E8CD7F006320BA = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +90,11 @@
 		2713F6FF29E8CD7F006320BA /* ChatGPT-App */ = {
 			isa = PBXGroup;
 			children = (
-				2713F70029E8CD7F006320BA /* AppDelegate.swift */,
-				2713F70229E8CD7F006320BA /* SceneDelegate.swift */,
+				2706B2B429F04BC40034065D /* Extensions */,
+				2706B2B329EE399D0034065D /* Resources */,
 				2713F70E29E8CD81006320BA /* Info.plist */,
-				2713F72229E8D881006320BA /* Utils */,
-				2713F71429E8CF5E006320BA /* Service */,
 				2713F72029E8D84D006320BA /* Model */,
+				2713F71429E8CF5E006320BA /* Service */,
 				2713F71F29E8D844006320BA /* View */,
 				2713F72129E8D858006320BA /* ViewModel */,
 				2713F72329E8D899006320BA /* Controller */,
@@ -85,6 +114,7 @@
 		2713F71F29E8D844006320BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				279830BC29EE27FB00BA7CE7 /* ChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,17 +129,9 @@
 		2713F72129E8D858006320BA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				279830BE29EE2D0200BA7CE7 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		2713F72229E8D881006320BA /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				2713F70929E8CD81006320BA /* Assets.xcassets */,
-				2713F70B29E8CD81006320BA /* LaunchScreen.storyboard */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		2713F72329E8D899006320BA /* Controller */ = {
@@ -138,6 +160,7 @@
 			name = "ChatGPT-App";
 			packageProductDependencies = (
 				2713F71D29E8D5CA006320BA /* OpenAISwift */,
+				2710CCA429F0AB4C002B9B1F /* IQKeyboardManagerSwift */,
 			);
 			productName = "ChatGPT-App";
 			productReference = 2713F6FD29E8CD7F006320BA /* ChatGPT-App.app */;
@@ -169,6 +192,7 @@
 			mainGroup = 2713F6F429E8CD7F006320BA;
 			packageReferences = (
 				2713F71C29E8D5CA006320BA /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				2710CCA329F0AB4C002B9B1F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 2713F6FE29E8CD7F006320BA /* Products */;
 			projectDirPath = "";
@@ -197,9 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2713F72529E8D907006320BA /* Service.swift in Sources */,
+				279830BF29EE2D0200BA7CE7 /* ChatViewModel.swift in Sources */,
+				2706B2B829F05C1B0034065D /* UITextField.swift in Sources */,
 				2713F70529E8CD7F006320BA /* ChatViewController.swift in Sources */,
+				2706B2B629F04BD20034065D /* UIView.swift in Sources */,
 				2713F70129E8CD7F006320BA /* AppDelegate.swift in Sources */,
 				2713F71829E8D0AD006320BA /* API.swift in Sources */,
+				279830BD29EE27FB00BA7CE7 /* ChatView.swift in Sources */,
 				2713F70329E8CD7F006320BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +440,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2710CCA329F0AB4C002B9B1F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 		2713F71C29E8D5CA006320BA /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
@@ -423,6 +459,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2710CCA429F0AB4C002B9B1F /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2710CCA329F0AB4C002B9B1F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		2713F71D29E8D5CA006320BA /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2713F71C29E8D5CA006320BA /* XCRemoteSwiftPackageReference "OpenAISwift" */;
