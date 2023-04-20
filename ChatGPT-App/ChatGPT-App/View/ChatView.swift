@@ -11,7 +11,7 @@ final class ChatView: UIView {
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ChatCellView.self, forCellReuseIdentifier: ChatCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
