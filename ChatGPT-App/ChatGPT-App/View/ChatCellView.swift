@@ -10,6 +10,20 @@ import UIKit
 class ChatCellView: UITableViewCell {
     
     public static let identifier = "ChatCellView"
+    
+    private let text: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .monospacedDigitSystemFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .left
+        label.textColor = .white
+        label.backgroundColor = .systemPurple
+        return label
+    }()
+    
+    required init?(coder: NSCoder) {
+        fatalError("Unsupported")
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,4 +34,7 @@ class ChatCellView: UITableViewCell {
         
     }
 
+    public func configure(with viewModel: ChatCellViewModel) {
+        
+    }
 }
