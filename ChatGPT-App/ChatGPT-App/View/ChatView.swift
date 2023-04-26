@@ -8,11 +8,14 @@
 import UIKit
 
 final class ChatView: UIView {
+    
+    private let viewModel: ChatViewModel = ChatViewModel()
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ChatCellView.self, forCellReuseIdentifier: ChatCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -27,13 +30,14 @@ final class ChatView: UIView {
         return textField
     }()
     
-    private let sendButton: UIButton = {
+    private lazy var sendButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentMode = .center
         button.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(sendPressed), for: .touchUpInside)
         return button
     }()
 
@@ -42,16 +46,45 @@ final class ChatView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(tableView, textField, sendButton)
         addConstraints()
+        configureTableView()
+        textField.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
     }
+    
+    private func configureTableView() {
+        tableView.dataSource = viewModel
+        tableView.delegate = viewModel
+    }
+    
+    @objc func sendPressed() {
+        guard let text = textField.text else { return }
+        viewModel.addMessages(text: text)
+        tableView.reloadData()
+        Service.shared.sendMessage(text: text) { result in
+            switch result {
+            case .success(let success):
+                self.viewModel.addMessages(text: success)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(_):
+                self.viewModel.addMessages(text: "Tente Novamente")
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        textField.text = ""
+        
+    }
 
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: textField.topAnchor),
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -15),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
@@ -67,4 +100,9 @@ final class ChatView: UIView {
         ])
     }
 
+}
+extension ChatView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }
