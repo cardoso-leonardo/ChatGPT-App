@@ -22,7 +22,7 @@ extension ChatViewModel: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ChatCellView(style: .default, reuseIdentifier: ChatCellView.identifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatCellView.identifier, for: indexPath) as! ChatCellView
         cell.messageLabel.text = messages[indexPath.row]
         return cell
     }
