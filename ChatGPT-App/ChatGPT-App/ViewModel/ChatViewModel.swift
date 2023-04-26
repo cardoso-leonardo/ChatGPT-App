@@ -9,7 +9,7 @@ import UIKit
 
 final class ChatViewModel: NSObject {
     
-    public var messages: [String] = []
+    private var messages: [String] = []
     
     public func addMessages(text: String) {
         messages.append(text)
@@ -25,6 +25,10 @@ extension ChatViewModel: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatCellView.identifier, for: indexPath) as! ChatCellView
         cell.messageLabel.text = messages[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

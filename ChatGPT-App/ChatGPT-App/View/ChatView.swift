@@ -14,9 +14,8 @@ final class ChatView: UIView {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(ChatCellView.self, forCellReuseIdentifier: ChatCellView.identifier)
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -68,7 +67,6 @@ final class ChatView: UIView {
             switch result {
             case .success(let success):
                 self.viewModel.addMessages(text: success)
-                print(self.viewModel.messages)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -86,7 +84,7 @@ final class ChatView: UIView {
     private func addConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: textField.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -15),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
