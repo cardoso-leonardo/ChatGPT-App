@@ -14,11 +14,13 @@ final class Service {
     
     private let openAI = OpenAISwift(authToken: API.authToken)
     
+    private let model = OpenAIModelType.gpt3(.davinci)
+    
     public func sendMessage(text: String, completion: @escaping (Result<String, OpenAIError>) -> Void) {
-        openAI.sendCompletion(with: text, model: .gpt3(.davinci), maxTokens: 1000) { result in
+        openAI.sendCompletion(with: text, model: model, maxTokens: 4000) { result in
             switch result {
-            case .success(let model):
-                guard let result = model.choices?.first else { return }
+            case .success(let success):
+                guard let result = success.choices?.first else { return }
                 completion(.success(result.text))
             case .failure(let failure):
                 completion(.failure(failure))

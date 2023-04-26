@@ -11,13 +11,14 @@ class ChatCellView: UITableViewCell {
     
     public static let identifier = "ChatCellView"
     
-    private let text: UILabel = {
+    public var messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .monospacedDigitSystemFont(ofSize: 12, weight: .regular)
         label.textAlignment = .left
         label.textColor = .white
         label.backgroundColor = .systemPurple
+        label.layer.cornerRadius = 20
         return label
     }()
     
@@ -33,8 +34,23 @@ class ChatCellView: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubviews(messageLabel)
+    }
 
     public func configure(with viewModel: ChatCellViewModel) {
         
+    }
+    
+    private func addConstraints() {
+        NSLayoutConstraint.activate([
+            messageLabel.topAnchor.constraint(equalTo: topAnchor),
+            messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+
+        ])
     }
 }
