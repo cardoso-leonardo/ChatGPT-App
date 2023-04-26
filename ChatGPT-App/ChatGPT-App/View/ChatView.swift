@@ -8,6 +8,8 @@
 import UIKit
 
 final class ChatView: UIView {
+    
+    private let viewModel: ChatViewModel = ChatViewModel()
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -42,10 +44,16 @@ final class ChatView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(tableView, textField, sendButton)
         addConstraints()
+        configureTableView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
+    }
+    
+    private func configureTableView() {
+        tableView.dataSource = viewModel
+        tableView.delegate = viewModel
     }
 
     private func addConstraints() {
