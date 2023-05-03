@@ -9,10 +9,10 @@ import UIKit
 
 final class ChatViewModel: NSObject {
     
-    private var messages: [String] = []
+    private var messages: [Message] = []
     
-    public func addMessages(text: String) {
-        messages.append(text)
+    public func addMessages(message: Message) {
+        messages.append(message)
     }
     
 }
@@ -22,9 +22,16 @@ extension ChatViewModel: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatCellView.identifier, for: indexPath) as! ChatCellView
-        cell.messageLabel.text = messages[indexPath.row]
+        if messages[indexPath.row].sender == "user" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserMessageCellView.identifier, for: indexPath) as! UserMessageCellView
+            cell.messageLabel.text = messages[indexPath.row].text
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: GPTMessageCellView.identifier, for: indexPath) as! GPTMessageCellView
+        cell.messageLabel.text = messages[indexPath.row].text
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

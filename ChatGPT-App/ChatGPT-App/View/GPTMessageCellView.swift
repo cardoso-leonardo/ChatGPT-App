@@ -1,15 +1,15 @@
 //
-//  ChatTableViewCell.swift
+//  GPTMessageCellView.swift
 //  ChatGPT-App
 //
-//  Created by Leonardo Cardoso on 20/04/23.
+//  Created by Leonardo Cardoso on 02/05/23.
 //
 
 import UIKit
 
-class ChatCellView: UITableViewCell {
-    
-    public static let identifier = "ChatCellView"
+class GPTMessageCellView: UITableViewCell {
+
+    public static let identifier = "GPTMessageCellView"
     
     public var messageLabel: UILabel = {
         let label = UILabel()
@@ -25,7 +25,7 @@ class ChatCellView: UITableViewCell {
     
     private let bubbleView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemRed
         view.layer.cornerRadius = 15
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .center
@@ -70,4 +70,5 @@ class ChatCellView: UITableViewCell {
 
         ])
     }
+
 }
