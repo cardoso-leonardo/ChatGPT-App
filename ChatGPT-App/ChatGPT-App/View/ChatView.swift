@@ -13,7 +13,8 @@ final class ChatView: UIView {
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(ChatCellView.self, forCellReuseIdentifier: ChatCellView.identifier)
+        tableView.register(UserMessageCellView.self, forCellReuseIdentifier: UserMessageCellView.identifier)
+        tableView.register(GPTMessageCellView.self, forCellReuseIdentifier: GPTMessageCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         return tableView
@@ -61,20 +62,19 @@ final class ChatView: UIView {
     
     @objc func sendPressed() {
         guard let text = textField.text else { return }
-        viewModel.addMessages(text: text)
+        let userMessage = Message(sender: "user", text: text)
+        viewModel.addMessages(message: userMessage)
         tableView.reloadData()
         Service.shared.sendMessage(text: text) { result in
             switch result {
             case .success(let success):
-                self.viewModel.addMessages(text: success)
+                let gptMessage = Message(sender: "gpt", text: success)
+                self.viewModel.addMessages(message: gptMessage)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             case .failure(_):
-                self.viewModel.addMessages(text: "Tente Novamente")
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                return
             }
         }
         textField.text = ""
