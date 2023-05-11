@@ -6,6 +6,7 @@
 <img width="300" alt="foto1" src="https://github.com/cardoso-leonardo/ChatGPT-App/assets/30813720/5a8c3ff4-6590-4a51-a542-6568549e2727">
 <img width="300" alt="foto2" src="https://github.com/cardoso-leonardo/ChatGPT-App/assets/30813720/31ac0bfa-5d5d-4e11-ae17-db00216407b8">
 </div>
+<p align="center"><i>Using Mockview App to create screenshots</i></p>
 
 # Libraries
 <p>Using Swift Package Manager:</p>
