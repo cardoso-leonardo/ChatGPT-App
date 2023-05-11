@@ -25,7 +25,7 @@ class GPTMessageCellView: UITableViewCell {
     
     private let bubbleView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .systemGray
         view.layer.cornerRadius = 15
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .center
