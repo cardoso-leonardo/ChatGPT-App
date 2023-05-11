@@ -17,6 +17,7 @@ final class ChatView: UIView {
         tableView.register(GPTMessageCellView.self, forCellReuseIdentifier: GPTMessageCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         return tableView
     }()
     
@@ -73,8 +74,8 @@ final class ChatView: UIView {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            case .failure(_):
-                return
+            case .failure(let fail):
+                print(String(describing: fail.localizedDescription))
             }
         }
         textField.text = ""

@@ -36,6 +36,7 @@ class GPTMessageCellView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews(bubbleView, messageLabel)
+        transform = CGAffineTransform(scaleX: 1, y: -1)
         selectionStyle = .none
         addConstraints()
     }
@@ -61,7 +62,7 @@ class GPTMessageCellView: UITableViewCell {
             messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
             messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            messageLabel.widthAnchor.constraint(equalToConstant: 250),
+            messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
             
             bubbleView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16),
             bubbleView.bottomAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 16),
