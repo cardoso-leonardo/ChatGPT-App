@@ -36,6 +36,7 @@ class GPTMessageCellView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews(bubbleView, messageLabel)
+        selectionStyle = .none
         addConstraints()
     }
 
@@ -53,7 +54,6 @@ class GPTMessageCellView: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
     
     private func addConstraints() {
@@ -69,6 +69,5 @@ class GPTMessageCellView: UITableViewCell {
             bubbleView.trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor, constant: 16)
 
         ])
-    }
 
 }
