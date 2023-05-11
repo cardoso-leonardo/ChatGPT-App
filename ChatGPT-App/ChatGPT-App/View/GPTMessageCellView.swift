@@ -8,7 +8,7 @@
 import UIKit
 
 class GPTMessageCellView: UITableViewCell {
-
+    
     public static let identifier = "GPTMessageCellView"
     
     public var messageLabel: UILabel = {
@@ -25,7 +25,7 @@ class GPTMessageCellView: UITableViewCell {
     
     private let bubbleView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .systemGray
         view.layer.cornerRadius = 15
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .center
@@ -36,24 +36,25 @@ class GPTMessageCellView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews(bubbleView, messageLabel)
+        transform = CGAffineTransform(scaleX: 1, y: -1)
+        selectionStyle = .none
         addConstraints()
     }
-
-//    public func configure(with viewModel: ChatCellViewModel) {
-//
-//    }
+    
+    //    public func configure(with viewModel: ChatCellViewModel) {
+    //
+    //    }
     
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
     
     private func addConstraints() {
@@ -61,14 +62,15 @@ class GPTMessageCellView: UITableViewCell {
             messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
             messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            messageLabel.widthAnchor.constraint(equalToConstant: 250),
+            messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
             
             bubbleView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16),
             bubbleView.bottomAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 16),
             bubbleView.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -16),
             bubbleView.trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor, constant: 16)
-
+            
         ])
+        
     }
-
+    
 }

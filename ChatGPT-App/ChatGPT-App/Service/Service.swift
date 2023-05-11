@@ -24,6 +24,7 @@ final class Service {
                 completion(.success(result.text))
             case .failure(let failure):
                 completion(.failure(failure))
+                print(failure.localizedDescription)
             }
         }
         
