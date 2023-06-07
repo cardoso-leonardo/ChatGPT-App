@@ -27,6 +27,5 @@ class ChatViewController: UIViewController {
             chatView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             chatView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
         ])
-    }
+        }
 }
-
